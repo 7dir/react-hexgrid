@@ -1,5 +1,8 @@
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  //actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: {
+    handles: ['onEvent', 'onSubmit', 'onClick', 'onKeyUp']
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -7,3 +10,4 @@ export const parameters = {
     },
   },
 }
+export const tags = ['autodocs'];

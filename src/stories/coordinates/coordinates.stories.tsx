@@ -72,18 +72,18 @@ const Template = (args) => {
                     q === 0
                       ? COLORS.red[4]
                       : r === 0
-                      ? COLORS.blue[4]
-                      : s === 0
-                      ? COLORS.green[4]
-                      : cellStyle.stroke,
+                        ? COLORS.blue[4]
+                        : s === 0
+                          ? COLORS.green[4]
+                          : cellStyle.stroke,
                   fill:
                     q === 0
                       ? COLORS.red[3]
                       : r === 0
-                      ? COLORS.blue[3]
-                      : s === 0
-                      ? COLORS.green[3]
-                      : cellStyle.fill,
+                        ? COLORS.blue[3]
+                        : s === 0
+                          ? COLORS.green[3]
+                          : cellStyle.fill,
                 }}
               >
                 <Coordinates q={q} r={r} s={s} />
