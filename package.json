@@ -40,7 +40,7 @@
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "react-transition-group": "^4.4.2",
-    "react-use": "17.4.0",
+    "react-use": "^17.5.1",
     "ts-jest": "^29.2.3",
     "ts-node": "^10.8.2",
     "typescript": "^5.5.4"
@@ -51,8 +51,5 @@
   "files": [
     "lib/",
     "dist/"
-  ],
-  "optionalDependencies": {
-    "fsevents": "^1.2.13"
-  }
+  ]
 }
