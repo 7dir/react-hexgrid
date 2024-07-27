@@ -1,34 +1,42 @@
-import { ComponentMeta } from "@storybook/react"
-import { HexGrid } from "../.."
+import React from "react"
+import { Meta, StoryFn } from "@storybook/react"
+import { HexGrid, Hexagon } from "../.."
 import { COLORS } from "../colors"
 
 export default {
   title: "Components/HexGrid",
   component: HexGrid,
-} as ComponentMeta<typeof HexGrid>
+} as Meta<typeof HexGrid>
 
-export const Basic = () => (
-  // the HexGrid is just a wrapper around a normal svg element. The viewBox is defaults to "-50 -50 100 100"
-  <HexGrid
-    style={{
-      border: `2px solid ${COLORS.gray[7]}`,
-      background: COLORS.gray[2],
-    }}
-    width={"100%"}
-    height={"50vh"}
-  >
-    {/* Normal svg elements can be placed as normal */}
-    <circle
-      cx="0"
-      cy="0"
-      r="10"
-      stroke={COLORS.gray[7]}
-      fill={COLORS.gray[3]}
-    />
-  </HexGrid>
+export const Basic: StoryFn<typeof Hexagon> = () => (
+  <div>
+    <h1 style={{ fontFamily: "sans-serif" }}>
+      HexGrid is just a wrapper around a normal svg element. The viewBox
+      defaults to "-50 -50 100 100"
+    </h1>
+    <HexGrid
+      style={{
+        border: `2px solid ${COLORS.gray[7]}`,
+        background: COLORS.gray[2],
+      }}
+      width={"100%"}
+      height={"50vh"}
+    >
+      {/* Normal svg elements can be placed as normal */}
+      <circle
+        cx="0"
+        cy="0"
+        r="10"
+        stroke={COLORS.gray[7]}
+        fill={COLORS.gray[3]}
+      />
+    </HexGrid>
+  </div>
 )
 
 export const WithSeveralSvgComponents = () => (
+  <div>
+    <h1 style={{ fontFamily: "sans-serif" }}>SVG elements can be placed as normal inside a HexGrid</h1>
   <HexGrid
     style={{
       border: `2px solid ${COLORS.gray[7]}`,
@@ -69,4 +77,5 @@ export const WithSeveralSvgComponents = () => (
       Some text...
     </text>
   </HexGrid>
+</div>
 )
