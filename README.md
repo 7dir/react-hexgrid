@@ -5,6 +5,7 @@
 ![dependencies Status](https://img.shields.io/librariesio/github/hellenic/react-hexgrid)
 [![Live demo](https://img.shields.io/badge/live-demo-brightgreen.svg)](https://hellenic.github.io/react-hexgrid/examples/)
 ![License](https://img.shields.io/npm/l/react-hexgrid.svg)
+[![CodeFactor](https://www.codefactor.io/repository/github/aaronzshey/react-hexgrid/badge)](https://www.codefactor.io/repository/github/aaronzshey/react-hexgrid)
 
 React components to build interactive hexagon grids. This library uses SVG and allows you to create fully customizable and scalable interactive hexagon grids with a simple api.
 
