@@ -1,4 +1,5 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react"
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react"
 import { Hexagon, HexGrid, Layout } from "../.."
 import Point from "../../models/Point"
 import { COLORS } from "../colors"
@@ -6,9 +7,11 @@ import { COLORS } from "../colors"
 export default {
   title: "Components/Layout",
   component: Layout,
-} as ComponentMeta<typeof Layout>
+} as Meta<typeof Layout>
 
-const Template: ComponentStory<typeof Layout> = (args) => (
+const Template: StoryFn<typeof Layout> = (args) => (
+  <div>
+    <h1 style={{fontFamily: "sans-serif"}}>SVG elements and hexagons can be mixed inside of a Layout</h1>
   <HexGrid
     style={{
       border: `2px solid ${COLORS.gray[7]}`,
@@ -33,9 +36,10 @@ const Template: ComponentStory<typeof Layout> = (args) => (
       <Hexagon r={3} q={-4} s={3} />
     </Layout>
   </HexGrid>
+</div>
 )
 
-export const Basic: ComponentStory<typeof Layout> = Template.bind({})
+export const Basic: StoryFn<typeof Layout> = Template.bind({})
 Basic.args = {
   spacing: 1.1,
   size: new Point(5, 5),

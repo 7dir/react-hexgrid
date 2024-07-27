@@ -1,30 +1,22 @@
 import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { HexGrid, Layout, Hexagon, GridGenerator } from "../.."
+import type { Meta, StoryFn } from "@storybook/react"
+import { HexGrid, Layout, Hexagon, GridGenerator, Hex } from "../.."
 import "./basic-example.css"
-import { css, jsx } from "@emotion/react"
 
 export default {
   title: "Basic",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
-const hexagons = GridGenerator.parallelogram(-2, 3, -2, 1)
+//parallelogram: q1 -> q2, r1 -> r2
+const hexagons: Hex[] = GridGenerator.parallelogram(0, 1, 0, 1)
 
-const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = () => {
   return (
-    <div
-      className="basic-example "
-      css={css`
-        margin: 0;
-        padding: 1em;
-        font-family: sans-serif;
-        background: #f0f0f0;
-      `}
-    >
+    <div className="basic-example">
       <h1>Basic example of HexGrid usage.</h1>
-      <HexGrid width={1200} height={1000}>
-        <Layout size={{ x: 7, y: 7 }}>
+      <HexGrid>
+        <Layout>
           {hexagons.map((hex, i) => (
             <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />
           ))}
@@ -34,4 +26,4 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
   )
 }
 
-export const Default = Template.bind({})
+export const Default: StoryFn<typeof Hexagon> = Template.bind({})
