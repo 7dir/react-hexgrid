@@ -3,8 +3,13 @@
   "description": "Interactive hexagon grids with React bindings",
   "version": "2.0.1",
   "main": "lib/index.js",
-  "author": "Hellenic",
-  "repository": "Hellenic/react-hexgrid",
+  "author": {
+    "name": "Hellenic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hellenic/react-hexgrid.git"
+  },
   "license": "MIT",
   "scripts": {
     "tsc": "tsc",
@@ -13,7 +18,8 @@
     "test": "jest --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "format": "prettier --write src/**/*.* package.json"
+    "format": "prettier --write src/**/*.* package.json",
+    "chromatic": "npx chromatic --project-token=chpt_1930c5ce3696cc4"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
@@ -52,5 +58,9 @@
   "files": [
     "lib/",
     "dist/"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/Hellenic/react-hexgrid/issues"
+  },
+  "homepage": "https://github.com/Hellenic/react-hexgrid#readme"
 }

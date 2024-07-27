@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { StoryFn, Meta } from "@storybook/react"
 import {
   HexGrid,
   Layout,
@@ -10,14 +10,14 @@ import {
   Pattern,
   Hex,
 } from "../.."
-import { css, jsx } from "@emotion/react"
+import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 
 export default {
   title: "CustomGrid",
   component: HexGrid,
   argTypes: {},
-} as ComponentMeta<typeof H>
+} as Meta<typeof H>
 
 const hexagonSize = { x: 10, y: 10 }
 const moreHexas = GridGenerator.parallelogram(-2, 2, -2, 2)
@@ -48,7 +48,7 @@ const Path = styled(P)`
   stroke-linejoin: round;
 `
 
-const Template: ComponentStory<typeof H> = (args, { argTypes }) => {
+const Template: StoryFn<typeof H> = (args, { argTypes }) => {
   return (
     <div
       style={{
