@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { StoryFn, Meta } from "@storybook/react"
 import { HexGrid, Layout, Hexagon, GridGenerator, HexUtils } from "../.."
 import { css } from "@emotion/react"
 import { useInterval } from "react-use"
@@ -8,7 +8,7 @@ import { COLORS } from "../colors"
 export default {
   title: "Way of life",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
 type State = "Dead" | "Living"
 
@@ -52,7 +52,7 @@ const colors = [COLORS.teal]
 const elementSize = 2.7
 const size = { x: elementSize, y: elementSize }
 
-const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   const [hexagons, setHexagons] = React.useState<CellDict>({})
   React.useEffect(() => {
     const hexas = reset()
@@ -88,12 +88,12 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
 
   return (
     <div
-      style={{ background: COLORS.gray[1] }}
-      css={css`
-        margin: 0;
-        padding: 1em;
-        font-family: sans-serif;
-      `}
+      style={{
+        background: COLORS.gray[1],
+        margin: 0,
+        padding: "1em",
+        fontFamily: "sans-serif",
+      }}
     >
       <div>
         <p>
@@ -129,27 +129,21 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
                 q={hex.q}
                 r={hex.r}
                 s={hex.s}
-                css={css`
-                  g {
-                    polygon {
-                      fill: ${hex.state === "Dead"
-                        ? COLORS.gray[
-                            HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
-                          ]
-                        : colors[step % colors.length][
-                            5 +
-                              (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
-                          ]};
-                      stroke: ${COLORS.dark[4]};
-                      stroke-opacity: ${0.6 /
-                      HexUtils.distance(hex, { q: 0, r: 0, s: 0 })};
-                      stroke-width: 0.15;
-                      transition: ${hex.state === "Dead"
-                        ? timingFunctionDying
-                        : timingFunctionReviving};
-                    }
-                  }
-                `}
+                stroke={COLORS.dark[4]}
+                strokeOpacity={
+                  0.6 / HexUtils.distance(hex, { q: 0, r: 0, s: 0 })
+                }
+                strokeWidth={15}
+                fill={
+                  hex.state === "Dead"
+                    ? COLORS.gray[
+                        HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
+                      ]
+                    : colors[step % colors.length][
+                        5 + (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
+                      ]
+                }
+                style={{ transition: "0.5s" }}
               />
             ))}
         </Layout>
@@ -158,4 +152,13 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
   )
 }
 
+/*
+style={{
+  transition: {
+    hex.state === "Dead"
+      ? timingFunctionDying
+      : timingFunctionReviving
+  }
+}}
+*/
 export const Default = Template.bind({})
