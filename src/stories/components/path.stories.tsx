@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { Meta, StoryFn } from "@storybook/react"
 import { GridGenerator, Hex, Hexagon, HexGrid, Layout, Path } from "../.."
 import { COLORS } from "../colors"
@@ -37,6 +37,8 @@ const Template: StoryFn<PathType> = (args) => (
         strokeWidth="0.1em"
         strokeLinecap="round"
         strokeLinejoin="round"
+        stroke={COLORS.blue[8]}
+        fill="none"
         {...args}
       />
     </Layout>
@@ -48,13 +50,3 @@ Basic.args = {
   start: new Hex(5, -3, -2),
   end: new Hex(-5, 1, 4),
 }
-
-/*
-css={css`
-  fill: none;
-  stroke: ${COLORS.blue[8]};
-  stroke-width: 0.1em;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-`}
-*/

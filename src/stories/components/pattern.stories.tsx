@@ -1,5 +1,4 @@
-import * as React from "react";
-//import { css } from "@emotion/react"
+import React from "react"
 import { Meta, StoryFn } from "@storybook/react"
 import { GridGenerator, Hexagon, HexGrid, Layout, Pattern } from "../.."
 import { COLORS } from "../colors"
@@ -9,7 +8,7 @@ type PathType = typeof Pattern
 export default {
   title: "Components/Pattern",
   component: Pattern,
-} as Meta<PathType>
+} as Meta<typeof Pattern>
 
 const hexas = GridGenerator.hexagon(10)
 
@@ -27,12 +26,13 @@ const Template: StoryFn<PathType> = () => (
         {hexas.map((hex, i) => (
           <Hexagon
             fillOpacity="0.6"
-
             key={i}
             q={hex.q}
             r={hex.r}
             s={hex.s}
             fill={hex.r % 2 === 0 ? "pattern1" : "pattern2"}
+            stroke="#7be3f6"
+            strokeWidth="0.2"
           />
         ))}
       </>
@@ -41,36 +41,11 @@ const Template: StoryFn<PathType> = () => (
     </Layout>
   </HexGrid>
 )
-export const Default = Template.bind({})
-
-// import * as React from "react"
-// import { ComponentStory, ComponentMeta } from "@storybook/react"
-// import {
-//   HexGrid,
-//   Layout,
-//   Hexagon,
-//   GridGenerator,
-//   Pattern,
-//   Text,
-//   HexUtils,
-// } from "../.."
-// import { css, jsx } from "@emotion/react"
-
-// export default {
-//   title: "PatternSwap",
-//   component: Hexagon,
-// } as ComponentMeta<typeof Hexagon>
-
-// const initialHexagons = GridGenerator.hexagon(2)
-// // Set additional data for hexagons
-// initialHexagons.forEach((hex) => {
-//   hex.pattern = "pattern1"
-// })
 
 /*
-
+this belongs at line 26:
 css={css`
-  fill: ;
+  fill: {hex.r % 2 === 0 ? "pattern1" : "pattern2"};
   fill-opacity: 0.6;
 
   &:hover {
@@ -83,3 +58,5 @@ css={css`
     transition: fill-opacity 0.5s;
   }
 `}*/
+
+export const Default: StoryFn<typeof Pattern> = Template.bind({})

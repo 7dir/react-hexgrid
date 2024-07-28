@@ -1,5 +1,5 @@
-import * as React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import React from "react"
+import { StoryFn, Meta } from "@storybook/react"
 import {
   HexGrid,
   Layout,
@@ -9,12 +9,11 @@ import {
   Text,
   HexUtils,
 } from "../.."
-import { css, jsx } from "@emotion/react"
 
 export default {
   title: "PatternSwap",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
 const initialHexagons = GridGenerator.hexagon(2)
 // Set additional data for hexagons
@@ -22,18 +21,18 @@ initialHexagons.forEach((hex) => {
   hex.pattern = "pattern1"
 })
 
-const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   const [hexagons, setHexagons] = React.useState(initialHexagons)
   return (
     <div
-      css={css`
-        margin: 0;
-        padding: 1em;
-        font-family: sans-serif;
-        background: #133b43;
-        color: white;
-        text-align: center;
-      `}
+      style={{
+        margin: 0,
+        padding: "1em",
+      }}
+      fontFamily="sans-serif"
+      background="#133b43"
+      color="white"
+      textAlign="center"
     >
       <h2
         css={css`
