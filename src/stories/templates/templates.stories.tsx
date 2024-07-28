@@ -1,5 +1,5 @@
-import * as React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import React from "react"
+import { StoryFn, Meta } from "@storybook/react"
 import {
   HexGrid,
   Layout,
@@ -10,19 +10,19 @@ import {
   Hex,
 } from "../.."
 import { configurations } from "./configurations"
-import { css } from "@emotion/react"
+import "./templates.stories.css"
 
 export default {
   title: "Templates",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
 const initialConfig = configurations["hexagon"]
 const generator = GridGenerator.getGenerator(initialConfig.map)
 
 const initialHexagons: Hex[] = generator(initialConfig.mapProps)
 
-const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   const [hexagons, setHexagons] = React.useState(initialHexagons)
   const [config, setConfig] = React.useState<any>(initialConfig)
 
@@ -30,12 +30,12 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
   const size = { x: layout.width, y: layout.height }
   return (
     <div
-      css={css`
-        margin: 0;
-        padding: 1em;
-        font-family: sans-serif;
-        background: #f0f0f0;
-      `}
+      style={{
+        margin: 0,
+        padding: "1em",
+        fontFamily: "sans-serif",
+        backgroundColor: "f0f0f0",
+      }}
     >
       <h2>Select grid type and configuration from dropdown.</h2>
       <div>
@@ -56,30 +56,7 @@ const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
         </select>
       </div>
       <hr />
-      <HexGrid
-        width={config.width}
-        height={config.height}
-        css={css`
-          g {
-            fill: #3f51b5;
-            fill-opacity: 0.6;
-            &:hover {
-              fill-opacity: 1;
-            }
-            text {
-              font-size: 0.2em;
-              fill: #000;
-              fill-opacity: 0.9;
-              transition: fill-opacity 0.2s;
-            }
-            polygon {
-              stroke: #3f51b5;
-              stroke-width: 0.2;
-              transition: fill-opacity 0.2s;
-            }
-          }
-        `}
-      >
+      <HexGrid width={config.width} height={config.height} className="hexGrid">
         <Layout
           size={size}
           flat={layout.flat}
