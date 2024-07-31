@@ -19,7 +19,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "prettier --write src/**/*.* package.json",
-    "chromatic": "npx chromatic --project-token=chpt_1930c5ce3696cc4"
+    "chromatic": "npx chromatic"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
