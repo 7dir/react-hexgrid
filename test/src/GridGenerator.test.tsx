@@ -1,4 +1,6 @@
 import { GridGenerator } from "../../src/GridGenerator"
+import { HexUtils } from "../../src/HexUtils"
+import { HexCoordinates } from "../../src/models/Hex"
 
 test("getGenerator should work when the request exists", () => {
   expect(GridGenerator.getGenerator("rectangle")).toBe(GridGenerator.rectangle)
@@ -64,11 +66,21 @@ test("orientedRectangle should work", () => {
     { q: 2, r: 1, s: -3 },
   ])
 })
+
+test("Ring should work", () => {
+  let originHex: HexCoordinates = { q: 0, r: 0, s: 0 }
+  const generatedRing: HexCoordinates[] = GridGenerator.ring(originHex, 1)
+  generatedRing.sort((a, b) => HexUtils.sort(a, b))
+  const expectedRing: HexCoordinates[] = HexUtils.neighbors(originHex)
+  expectedRing.sort((a, b) => HexUtils.sort(a, b))
+  expect(generatedRing).toEqual(expectedRing)
+})
+
 // Need to create tests for ring and spiral functions. Not sure how though.
 /*
 it("ring function", () => {
   const hexTest: HexCoordinates = { q: 0, r: 0, s: 0 }
-  expect(GridGenerator.ring(hexTest, 1)).toEqual(HexUtils.neighbors(hexTest))
+  expect(GridGenerator.ring(hexTest, 1)).toEqual()
 })
 
 it("spiral function", () => {
