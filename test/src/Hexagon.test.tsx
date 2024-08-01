@@ -2,8 +2,8 @@ import React from "react"
 import renderer from "react-test-renderer"
 import { render, fireEvent } from "@testing-library/react"
 
-import { Layout } from "../../../src/Layout"
-import { Hexagon } from "../../../src/Hexagon/Hexagon"
+import { Layout } from "../../src/Layout"
+import { Hexagon } from "../../src/Hexagon/Hexagon"
 
 test("Hexagon should render correctly with default props", () => {
   const tree = renderer
