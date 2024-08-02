@@ -1,30 +1,28 @@
 import React from "react"
-import renderer from "react-test-renderer"
 import { render, fireEvent } from "@testing-library/react"
 
 import { Layout } from "../../src/Layout"
 import { Hexagon } from "../../src/Hexagon/Hexagon"
 
 test("Hexagon should render correctly with default props", () => {
-  const tree = renderer
-    .create(
-      <Layout
-        className={"test1"}
-        size={{ x: 6, y: 6 }}
-        flat={false}
-        spacing={1.1}
-        origin={{ x: 0, y: 0 }}
-      >
-        <Hexagon q={0} r={0} s={0}>
-          <div>child</div>
-        </Hexagon>
-      </Layout>,
-    )
-    .toJSON()
-  expect(tree).toMatchSnapshot()
+  const { container } = render(
+    <Layout
+      className={"test1"}
+      size={{ x: 6, y: 6 }}
+      flat={false}
+      spacing={1.1}
+      origin={{ x: 0, y: 0 }}
+    >
+      <Hexagon q={0} r={0} s={0}>
+        <div>child</div>
+      </Hexagon>
+    </Layout>,
+  )
+
+  expect(container.firstChild).toMatchSnapshot()
 })
 
-test.only("Hexagon mouse callbacks should be called", async () => {
+test("Hexagon mouse callbacks should be called", async () => {
   const onMouseEnter = jest.fn()
   const onMouseOver = jest.fn()
   const onMouseLeave = jest.fn()
@@ -69,35 +67,35 @@ test.only("Hexagon mouse callbacks should be called", async () => {
 
   expect(el).toBeDefined()
 
-  expect(onMouseOver).toBeCalledTimes(0)
-  expect(onMouseEnter).toBeCalledTimes(0)
+  expect(onMouseOver).toHaveBeenCalledTimes(0)
+  expect(onMouseEnter).toHaveBeenCalledTimes(0)
   fireEvent.mouseEnter(el)
-  expect(onMouseEnter).toBeCalledTimes(1)
+  expect(onMouseEnter).toHaveBeenCalledTimes(1)
   // mouse over seems to be also called on mouse enter
-  expect(onMouseOver).toBeCalledTimes(1)
+  expect(onMouseOver).toHaveBeenCalledTimes(1)
 
   fireEvent.mouseOver(el)
-  expect(onMouseOver).toBeCalledTimes(2)
+  expect(onMouseOver).toHaveBeenCalledTimes(2)
 
   fireEvent.mouseLeave(el)
-  expect(onMouseLeave).toBeCalledTimes(1)
+  expect(onMouseLeave).toHaveBeenCalledTimes(1)
 
   fireEvent.click(el)
-  expect(onClick).toBeCalledTimes(1)
+  expect(onClick).toHaveBeenCalledTimes(1)
 
   fireEvent.dragStart(el, { dataTransfer: { setData: () => {} } })
 
-  expect(onDragStart).toBeCalledTimes(1)
+  expect(onDragStart).toHaveBeenCalledTimes(1)
 
   fireEvent.dragEnd(el, { dataTransfer: { setData: () => {} } })
 
-  expect(onDragEnd).toBeCalledTimes(1)
+  expect(onDragEnd).toHaveBeenCalledTimes(1)
 
   fireEvent.dragOver(el)
-  expect(onDragOver).toBeCalledTimes(1)
+  expect(onDragOver).toHaveBeenCalledTimes(1)
 
   fireEvent.drop(el, {
     dataTransfer: { getData: (data) => JSON.stringify({ data }) },
   })
-  expect(onDrop).toBeCalledTimes(1)
+  expect(onDrop).toHaveBeenCalledTimes(1)
 })
