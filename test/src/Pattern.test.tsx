@@ -5,11 +5,13 @@ import { Pattern } from "../../src/Pattern"
 
 test("Pattern should render correctly with default props", () => {
   const { container } = render(
-    <Pattern
-      id={"test1"}
-      link={"http://example.com"}
-      size={{ x: 100, y: 200 }}
-    />,
+    <svg>
+      <Pattern
+        id={"test1"}
+        link={"http://example.com"}
+        size={{ x: 100, y: 200 }}
+      />
+    </svg>,
   )
   expect(container.firstChild).toMatchSnapshot()
 })
