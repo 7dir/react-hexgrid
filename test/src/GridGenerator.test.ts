@@ -1,4 +1,5 @@
 import { GridGenerator } from "../../src/GridGenerator"
+import type { GeneratorName } from "../../src/GridGenerator"
 import { HexUtils } from "../../src/HexUtils"
 import { HexCoordinates } from "../../src/models/Hex"
 
@@ -7,7 +8,7 @@ test("getGenerator should work when the request exists", () => {
 })
 
 test("getGenerator should work when the request does not exist", () => {
-  expect(GridGenerator.getGenerator("bogus" as any)).toBeUndefined()
+  expect(GridGenerator.getGenerator("bogus" as GeneratorName)).toBeUndefined()
 })
 
 test("parallelogram should work", () => {
@@ -67,8 +68,8 @@ test("orientedRectangle should work", () => {
   ])
 })
 
-test("Ring should work", () => {
-  let originHex: HexCoordinates = { q: 0, r: 0, s: 0 }
+test("ring should work", () => {
+  const originHex: HexCoordinates = { q: 0, r: 0, s: 0 }
   const generatedRing: HexCoordinates[] = GridGenerator.ring(originHex, 1)
   generatedRing.sort((a, b) => HexUtils.sort(a, b))
   const expectedRing: HexCoordinates[] = HexUtils.neighbors(originHex)
