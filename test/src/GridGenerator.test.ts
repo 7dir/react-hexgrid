@@ -76,13 +76,8 @@ test("Ring should work", () => {
   expect(generatedRing).toEqual(expectedRing)
 })
 
-// Need to create tests for ring and spiral functions. Not sure how though.
+// how is the spiral different from the hexagon?
 /*
-it("ring function", () => {
-  const hexTest: HexCoordinates = { q: 0, r: 0, s: 0 }
-  expect(GridGenerator.ring(hexTest, 1)).toEqual()
-})
-
 it("spiral function", () => {
   const hexTest: HexCoordinates = { q: 0, r: 0, s: 0 }
   expect(GridGenerator.spiral(hexTest, 4)).toEqual({})
