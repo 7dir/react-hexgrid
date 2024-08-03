@@ -18,11 +18,13 @@ test("Pattern should render correctly with default props", () => {
 
 test("Pattern should render correctly with custom props", () => {
   const { container } = render(
-    <Pattern
-      id={"test2"}
-      link={"http://example.com"}
-      size={{ x: 200, y: 100 }}
-    />,
+    <svg>
+      <Pattern
+        id={"test2"}
+        link={"http://example.com"}
+        size={{ x: 200, y: 100 }}
+      />
+    </svg>,
   )
   expect(container.firstChild).toMatchSnapshot()
 })
