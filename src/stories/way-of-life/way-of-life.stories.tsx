@@ -85,14 +85,6 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   const timingFunctionDying = `fill ${dyingAnimationDuration}s cubic-bezier(0.7, 0.8, 0.9, 1)`
   const timingFunctionReviving = `fill ${revivingAnimationDuration}s cubic-bezier(0.2, 0.5, 0.9, 1)`
 
-  Object.keys(hexagons)
-    .map((v) => hexagons[v])
-    .map((hex, i) =>
-      console.log(
-        COLORS.gray[HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4],
-      ),
-    )
-
   return (
     <div
       style={{
