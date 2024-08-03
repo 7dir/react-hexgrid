@@ -105,7 +105,9 @@ export function Hexagon(
   // for backwards comapatbility
   const state = { hex }
 
-  const fillId = fill ? `url(#${fill})` : undefined
+  // the fill prop used to be set to fillId.  However, it doesn't work and throughout the code
+  // we just use css with the g or polygon selectors to set fill.
+  //const fillId = fill ? `url(#${fill})` : undefined
   const draggable = { draggable: true } as any
   return (
     <g
@@ -167,7 +169,7 @@ export function Hexagon(
       }}
     >
       <g className="hexagon">
-        <polygon points={points} fill={fillId} style={cellStyle} />
+        <polygon points={points} fill={fill} style={cellStyle} />
         {children}
       </g>
     </g>

@@ -1,12 +1,11 @@
 import * as React from "react"
 import { StoryFn, Meta } from "@storybook/react"
 import { HexGrid, Layout, Hexagon, GridGenerator, HexUtils } from "../.."
-import { css } from "@emotion/react"
 import { useInterval } from "react-use"
 import { COLORS } from "../colors"
 
 export default {
-  title: "Way of life",
+  title: "Way of Life",
   component: Hexagon,
 } as Meta<typeof Hexagon>
 
@@ -18,7 +17,7 @@ type Cell = Coordinates & { state: State }
 
 type CellDict = { [coords: string]: Cell }
 
-function reset() {
+function reset(): CellDict {
   const count = 8
   const initialHexagons = GridGenerator.hexagon(count)
   const dict: CellDict = {}
@@ -36,14 +35,14 @@ function reset() {
   return dict
 }
 
-function getNeighbors(hex: Cell, dict: CellDict) {
+function getNeighbors(hex: Cell, dict: CellDict): Cell[] {
   let neighbors = HexUtils.neighbors(hex)
   return neighbors
     .map(({ q, r, s }) => dict[`${q}-${r}-${s}`])
     .filter((v) => Boolean(v))
 }
 
-function countLivingNeighbors(hex: Cell, dict: CellDict) {
+function countLivingNeighbors(hex: Cell, dict: CellDict): number {
   const neighbors = getNeighbors(hex, dict)
   return neighbors.reduce((v1, v2) => v1 + (v2.state === "Living" ? 1 : 0), 0)
 }
@@ -85,6 +84,14 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
 
   const timingFunctionDying = `fill ${dyingAnimationDuration}s cubic-bezier(0.7, 0.8, 0.9, 1)`
   const timingFunctionReviving = `fill ${revivingAnimationDuration}s cubic-bezier(0.2, 0.5, 0.9, 1)`
+
+  Object.keys(hexagons)
+    .map((v) => hexagons[v])
+    .map((hex, i) =>
+      console.log(
+        COLORS.gray[HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4],
+      ),
+    )
 
   return (
     <div
@@ -129,22 +136,24 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
                 q={hex.q}
                 r={hex.r}
                 s={hex.s}
-                stroke={COLORS.dark[4]}
-                strokeOpacity={
-                  0.6 / HexUtils.distance(hex, { q: 0, r: 0, s: 0 })
-                }
-                strokeWidth={15}
-                fill={
-                  hex.state === "Dead"
-                    ? COLORS.gray[
-                        HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
-                      ]
-                    : colors[step % colors.length][
-                        5 + (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
-                      ]
-                }
-                style={{ transition: "0.5s" }}
-              />
+                stroke={"blue"}
+                strokeOpacity={0.6}
+                strokeWidth={0.1}
+                cellStyle={{
+                  fill:
+                    hex.state === "Dead"
+                      ? COLORS.gray[
+                          HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
+                        ]
+                      : colors[step % colors.length][
+                          5 + (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
+                        ],
+                  transition:
+                    hex.state === "Dead"
+                      ? timingFunctionDying
+                      : timingFunctionReviving,
+                }}
+              ></Hexagon>
             ))}
         </Layout>
       </HexGrid>
@@ -152,13 +161,4 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   )
 }
 
-/*
-style={{
-  transition: {
-    hex.state === "Dead"
-      ? timingFunctionDying
-      : timingFunctionReviving
-  }
-}}
-*/
 export const Default = Template.bind({})
