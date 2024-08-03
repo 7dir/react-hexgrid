@@ -22,6 +22,7 @@ export default {
 const hexagonSize = { x: 10, y: 10 }
 const moreHexas = GridGenerator.parallelogram(-2, 2, -2, 2)
 
+/*
 const Hexagon = styled(H)`
   stroke: #7be3f6;
   stroke-width: 0.2;
@@ -31,6 +32,23 @@ const Hexagon = styled(H)`
     fill-opacity: 0.7;
   }
 `
+
+USE THIS:
+https://refine.dev/blog/react-svg/#adding-interactivity
+*/
+
+const Hexagon = (
+  <H
+    q={0}
+    r={0}
+    s={0}
+    cellStyle={{
+      stroke: "#7be3f6",
+      strokeWidth: "0.2",
+      transition: "fill-opacity 0.5s",
+    }}
+  />
+)
 
 const Text = styled(T)`
   font-size: 0.22em;
