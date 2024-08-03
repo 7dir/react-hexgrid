@@ -105,6 +105,9 @@ export function Hexagon(
   // for backwards comapatbility
   const state = { hex }
 
+  // the fill prop used to be set to fillId.  However, it doesn't work and throughout the code
+  // we just use css with the g or polygon selectors to set fill.
+  // I'm actually not sure what this prop and variable are supposed to do
   const fillId = fill ? `url(#${fill})` : undefined
   const draggable = { draggable: true } as any
   return (

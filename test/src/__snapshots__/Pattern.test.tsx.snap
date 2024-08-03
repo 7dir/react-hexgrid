@@ -1,24 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pattern should render correctly with custom props 1`] = `
-<defs>
-  <pattern
-    height="100"
-    id="test2"
-    patternunits="objectBoundingBox"
-    width="200"
-    x="0"
-    y="0"
-  >
-    <image
-      height="200"
-      width="400"
+<svg>
+  <defs>
+    <pattern
+      height="100"
+      id="test2"
+      patternUnits="objectBoundingBox"
+      width="200"
       x="0"
-      xlink:href="http://example.com"
       y="0"
-    />
-  </pattern>
-</defs>
+    >
+      <image
+        height="200"
+        width="400"
+        x="0"
+        xlink:href="http://example.com"
+        y="0"
+      />
+    </pattern>
+  </defs>
+</svg>
 `;
 
 exports[`Pattern should render correctly with default props 1`] = `

@@ -25,7 +25,9 @@ const Template: StoryFn<PathType> = (args) => (
       <>
         {hexas.map(({ q, r, s }) => (
           <Hexagon
-            fill={COLORS.dark[2]}
+            cellStyle={{
+              fill: COLORS.blue[1],
+            }}
             onClick={() => console.log("clicked", { q, r, s })}
             q={q}
             r={r}
