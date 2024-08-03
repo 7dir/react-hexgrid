@@ -130,7 +130,7 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
         <Layout size={size} flat={true} spacing={1}>
           {Object.keys(hexagons)
             .map((v) => hexagons[v])
-            .map((hex, i) => (
+            .map((hex, _) => (
               <Hexagon
                 key={i}
                 q={hex.q}
