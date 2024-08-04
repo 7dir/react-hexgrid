@@ -1,12 +1,12 @@
 import * as React from "react"
-import { ComponentMeta } from "@storybook/react"
+import { Meta, StoryFn } from "@storybook/react"
 import { HexGrid, Layout, Hexagon, GridGenerator, Text } from "../.."
 import { COLORS } from "../colors"
 
 export default {
   title: "Coordinates",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
 const fontStyle = { fontWeight: 700, fontSize: "0.2rem" }
 function Coordinates({
