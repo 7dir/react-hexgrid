@@ -83,10 +83,10 @@ function calculateCoordinates(
 
 export type LayoutProps = {
   children:
-    | React.ReactElement
-    | React.ReactElement[]
-    | JSX.Element
-    | JSX.Element[]
+  | React.ReactElement
+  | React.ReactElement[]
+  | JSX.Element
+  | JSX.Element[]
   className?: string
   flat?: boolean
   origin?: any
