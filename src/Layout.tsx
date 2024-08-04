@@ -85,6 +85,7 @@ export type LayoutProps = {
   children:
     | React.ReactElement
     | React.ReactElement[]
+    | React.ReactNode
     | JSX.Element
     | JSX.Element[]
   className?: string

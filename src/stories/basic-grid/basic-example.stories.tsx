@@ -1,7 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import type { Meta, StoryFn } from "@storybook/react"
 import { HexGrid, Layout, Hexagon, GridGenerator, Hex } from "../.."
-import "./basic-example.css"
 
 export default {
   title: "Basic",
@@ -14,11 +13,30 @@ const hexagons: Hex[] = GridGenerator.parallelogram(0, 1, 0, 1)
 const Template: StoryFn<typeof Hexagon> = () => {
   return (
     <div className="basic-example">
-      <h1>Basic example of HexGrid usage.</h1>
+      <h1 style={{ fontFamily: "sans-serif" }}>
+        Basic example of HexGrid usage.
+      </h1>
       <HexGrid>
         <Layout>
           {hexagons.map((hex, i) => (
-            <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />
+            <Hexagon
+              key={i}
+              q={hex.q}
+              r={hex.r}
+              s={hex.s}
+              strokeWidth="0.2"
+              stroke="#3f51b5"
+              cellStyle={{
+                fill: "rgba(63,81,181, 0.6)",
+                transition: "fill-opacity 0.2s",
+              }}
+              onMouseEnter={(e) =>
+                (e.target as SVGElement).setAttribute("fill-opacity", "0.6")
+              }
+              onMouseLeave={(e) =>
+                (e.target as SVGElement).setAttribute("fill-opacity", "1")
+              }
+            />
           ))}
         </Layout>
       </HexGrid>
