@@ -1,5 +1,5 @@
-import React from "react"
-import { StoryFn, Meta } from "@storybook/react"
+import React from "react";
+import { StoryFn, Meta } from "@storybook/react";
 import {
   HexGrid,
   Layout,
@@ -9,18 +9,18 @@ import {
   Path,
   Pattern,
   Hex,
-} from "../.."
+} from "../..";
 
-import type { HexagonProps } from "../../Hexagon/Hexagon"
+import type { HexagonProps } from "../../Hexagon/Hexagon";
 
 export default {
   title: "CustomGrid",
   component: HexGrid,
   argTypes: {},
-} as Meta<typeof Hexagon>
+} as Meta<typeof Hexagon>;
 
-const hexagonSize = { x: 10, y: 10 }
-const moreHexas: Hex[] = GridGenerator.parallelogram(-2, 2, -2, 2)
+const hexagonSize = { x: 10, y: 10 };
+const moreHexas: Hex[] = GridGenerator.parallelogram(-2, 2, -2, 2);
 const plainHexCoords: Hex[] = [
   { q: 0, r: 0, s: 0 },
   { q: 0, r: 1, s: -1 },
@@ -28,12 +28,12 @@ const plainHexCoords: Hex[] = [
   { q: 1, r: 0, s: -1 },
   { q: -1, r: 0, s: 1 },
   { q: -2, r: 0, s: 1 },
-]
+];
 
 type HexagonPropsExtended = Omit<HexagonProps, "q" | "r" | "s"> & {
-  strokeWidth?: string
-  stroke?: string
-}
+  strokeWidth?: string;
+  stroke?: string;
+};
 
 const hexagonStyleAndEventProps: HexagonPropsExtended = {
   strokeWidth: "0.2",
@@ -43,14 +43,14 @@ const hexagonStyleAndEventProps: HexagonPropsExtended = {
     transition: "fill-opacity 0.5s",
   },
   onMouseEnter: (e: React.MouseEvent<SVGElement, MouseEvent>) => {
-    ;(e.target as SVGElement).setAttribute("fill-opacity", "0.1")
+    (e.target as SVGElement).setAttribute("fill-opacity", "0.1");
   },
   onMouseLeave: (e: React.MouseEvent<SVGElement, MouseEvent>) => {
-    ;(e.target as SVGElement).setAttribute("fill-opacity", "1")
+    (e.target as SVGElement).setAttribute("fill-opacity", "1");
   },
-}
+};
 
-const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = () => {
   return (
     <div
       style={{
@@ -134,7 +134,7 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
         </g>
       </HexGrid>
     </div>
-  )
-}
+  );
+};
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
