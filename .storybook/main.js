@@ -6,22 +6,19 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-webpack5-compiler-swc",
-    "@chromatic-com/storybook"
+    "@chromatic-com/storybook",
   ],
 
   framework: {
     name: "@storybook/react-webpack5",
-    options: {}
+    options: {},
   },
 
   babel: async (options) => ({
     ...options,
     presets: [
       ["@babel/preset-env", { shippedProposals: true, loose: true }],
-      [
-        "@babel/preset-react",
-        { runtime: "automatic", importSource: "@emotion/react" },
-      ],
+      ["@babel/preset-react", { runtime: "automatic", importSource: "" }],
       ["@babel/preset-typescript"],
     ],
   }),
@@ -29,6 +26,6 @@ module.exports = {
   docs: {},
 
   typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
-}
+    reactDocgen: "react-docgen-typescript",
+  },
+};
