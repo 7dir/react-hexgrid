@@ -30,6 +30,25 @@ USE THIS:
 https://refine.dev/blog/react-svg/#adding-interactivity
 */
 
+type HexagonPropsExtended = Omit<HexagonProps, "q" | "r" | "s"> & {
+  strokeWidth?: string
+  stroke?: string
+}
+
+const hexagonStyleAndEventProps: HexagonPropsExtended = {
+  strokeWidth: "0.2",
+  stroke: "#7be3f6",
+  cellStyle: {
+    fill: "rgba(123,227,246, 0.7)",
+    transition: "fill-opacity 0.5s",
+  },
+  onMouseEnter: (e: React.MouseEvent<SVGElement, MouseEvent>) => {
+    ;(e.target as SVGElement).setAttribute("fill-opacity", "0.1")
+  },
+  onMouseLeave: (e: React.MouseEvent<SVGElement, MouseEvent>) => {
+    ;(e.target as SVGElement).setAttribute("fill-opacity", "1")
+  },
+}
 function Hexagon(props: HexagonProps): React.JSX.Element {
   console.log(props.fill)
   return (
@@ -38,18 +57,7 @@ function Hexagon(props: HexagonProps): React.JSX.Element {
       r={props.r}
       s={props.s}
       fill={props.fill}
-      strokeWidth="0.2"
-      stroke="#7be3f6"
-      cellStyle={{
-        fill: "rgba(123,227,246, 0.7)",
-        transition: "fill-opacity 0.5s",
-      }}
-      onMouseEnter={(e) =>
-        (e.target as SVGElement).setAttribute("fill-opacity", "0.1")
-      }
-      onMouseLeave={(e) =>
-        (e.target as SVGElement).setAttribute("fill-opacity", "1")
-      }
+      {...hexagonStyleAndEventProps}
     >
       {props.children}
     </H>
