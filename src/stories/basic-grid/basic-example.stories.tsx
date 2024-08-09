@@ -1,15 +1,17 @@
-import React, { useState } from "react"
-import type { Meta, StoryFn } from "@storybook/react"
-import { HexGrid, Layout, Hexagon, GridGenerator, Hex } from "../.."
+import React, { useState } from "react";
+import type { Meta, StoryFn } from "@storybook/react";
+import { HexGrid, Layout, Hexagon, GridGenerator, Hex } from "../..";
 
 export default {
   title: "Basic",
   component: Hexagon,
-} as Meta<typeof Hexagon>
+  tags: ["!autodocs"],
+} as Meta<typeof Hexagon>;
 
 //parallelogram: q1 -> q2, r1 -> r2
-const hexagons: Hex[] = GridGenerator.parallelogram(0, 1, 0, 1)
+const hexagons: Hex[] = GridGenerator.parallelogram(0, 1, 0, 1);
 
+//https://storybook.js.org/docs/6/writing-tests/interaction-testing
 const Template: StoryFn<typeof Hexagon> = () => {
   return (
     <div className="basic-example">
@@ -41,7 +43,7 @@ const Template: StoryFn<typeof Hexagon> = () => {
         </Layout>
       </HexGrid>
     </div>
-  )
-}
+  );
+};
 
-export const Default: StoryFn<typeof Hexagon> = Template.bind({})
+export const Default: StoryFn<typeof Hexagon> = Template.bind({});

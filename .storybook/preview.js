@@ -1,7 +1,7 @@
 export const parameters = {
   //actions: { argTypesRegex: "^on[A-Z].*" },
   actions: {
-    handles: ['onEvent', 'onSubmit', 'onClick', 'onKeyUp']
+    handles: ["onEvent", "onSubmit", "onClick", "onKeyUp"],
   },
   controls: {
     matchers: {
@@ -9,5 +9,10 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
-export const tags = ['autodocs'];
+  parameters: {
+    docs: {
+      toc: true,
+    },
+  },
+};
+export const tags = ["autodocs"];
