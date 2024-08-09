@@ -22,10 +22,6 @@ coverage/
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-# Dependency directory
-node_modules/
-node_modules
-
 # Babel compiled sources
 lib/
 
@@ -43,3 +39,6 @@ nbproject
 
 # storybook files
 storybook-static
+
+node_modules
+node_modules/
