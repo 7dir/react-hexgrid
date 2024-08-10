@@ -1,15 +1,24 @@
-import { HexGrid, Layout, Hexagon } from 'react-hexgrid-dev';
+import { HexGrid, Layout, Hexagon } from "react-hexgrid";
 export default function App() {
-
   return (
     <>
-      <HexGrid width={1200} height={800}>
+      <HexGrid
+        style={{
+          height: "100vh",
+          width: "100vw",
+        }}
+      >
         <Layout>
-          <Hexagon q={0} r={0} s={0} cellStyle={{
-            fill: 'red',
-          }} />
+          <Hexagon
+            q={0}
+            r={0}
+            s={0}
+            cellStyle={{
+              fill: "red",
+            }}
+          />
         </Layout>
       </HexGrid>
     </>
-  )
+  );
 }
