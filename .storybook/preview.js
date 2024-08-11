@@ -9,10 +9,5 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  parameters: {
-    docs: {
-      toc: true,
-    },
-  },
 };
 export const tags = ["autodocs"];
