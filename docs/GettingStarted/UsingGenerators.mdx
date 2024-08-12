@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Getting Started/Using Generators"/>
+
+## What's a generator?
+
+One of the most powerful features of `react-hexgrid` is its generator algorithms - helper functions
+that can create patterns of hexagons for you.  These generators are simple and easy to use.
+
+## Usage
+
+Extended usage documentation can be found in the API documentation section of this Storybook.
+Here's a basic example, using the HexagonGenerator:
+
+```tsx
+import { Hexagon, HexGrid, HexagonGenerator } from '@aaronzshey/react-hexgrid';
+export default function App() {
+    const hexagons: Hex[] = HexagonGenerator.hexagon({radius: 3});
+}
+```
