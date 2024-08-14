@@ -15,6 +15,17 @@ Here's a basic example, using the HexagonGenerator:
 ```tsx
 import { Hexagon, HexGrid, HexagonGenerator } from '@aaronzshey/react-hexgrid';
 export default function App() {
-    const hexagons: Hex[] = HexagonGenerator.hexagon({radius: 3});
+    const hexagons: Hex[] = HexagonGenerator.hexagon(3);
+    return(
+        <HexGrid>
+        {
+            hexagons.map((hex, i) => (
+                <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />
+            ))
+        }
+        </HexGrid>
+    )
 }
 ```
+
+And that's it!  There are a couple other generator functions - check them out in the API Documentation section below!
