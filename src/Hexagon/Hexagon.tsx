@@ -25,10 +25,25 @@ export type HexagonMouseEventHandler<T = SVGGElement> = (
 ) => void
 
 export type HexagonProps = {
+  /**
+   * The q coordinate of the hexagon.
+   */
   q: number
+  /**
+   * The r coordinate of the hexagon.
+   */
   r: number
+  /**
+   * The s coordinate of the hexagon.
+   */
   s: number
+  /**
+   * The pattern id for the fill image of the hexagon
+   */
   fill?: string
+  /**
+   * The pattern id for the fill image of the hexagon
+   */
   className?: string
   cellStyle?: React.CSSProperties | undefined
   data?: any

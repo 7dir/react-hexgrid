@@ -1,4 +1,4 @@
-import { HexGrid, Layout, Hexagon } from "react-hexgrid";
+import { HexGrid, Layout, Hexagon } from "react-hexgrid-github";
 export default function App() {
   return (
     <>

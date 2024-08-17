@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import type { Meta, StoryFn } from "@storybook/react";
 import { HexGrid, Layout, Hexagon, GridGenerator, Hex } from "../..";
 
-export default {
-  title: "Basic",
+const meta = {
+  title: "A/Basic",
   component: Hexagon,
   tags: ["!autodocs"],
-} as Meta<typeof Hexagon>;
+} satisfies Meta<typeof Hexagon>;
+
+export default meta;
 
 //parallelogram: q1 -> q2, r1 -> r2
 const hexagons: Hex[] = GridGenerator.parallelogram(0, 1, 0, 1);

@@ -2,7 +2,10 @@ module.exports = {
   stories: [
     "../docs/GettingStarted/Introduction.mdx",
     "../docs/GettingStarted/YourFirstApp.mdx",
-    "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
+    "../docs/APIDocumentation/Hexagon.mdx",
+    "../docs/APIDocumentation/components/hexagon.stories.tsx",
+    "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../docs/**/*.stories.@(ts|tsx)"],
 
   addons: [
     "@storybook/addon-links",

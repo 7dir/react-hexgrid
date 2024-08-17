@@ -18,11 +18,9 @@ export default function App() {
     const hexagons: Hex[] = HexagonGenerator.hexagon(3);
     return(
         <HexGrid>
-        {
-            hexagons.map((hex, i) => (
-                <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />
-            ))
-        }
+        {hexagons.map((hex, i) => (
+            <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} />
+        ))}
         </HexGrid>
     )
 }
