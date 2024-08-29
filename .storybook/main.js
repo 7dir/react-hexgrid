@@ -1,8 +1,12 @@
 module.exports = {
   stories: [
-    "../docs/GettingStarted/Introduction.mdx",
-    "../docs/GettingStarted/YourFirstApp.mdx",
+    "../docs/GettingStarted/1. Introduction.mdx",
+    "../docs/GettingStarted/2. YourFirstApp.mdx",
+    "../docs/GettingStarted/3. UsingGenerators.mdx",
+    "../docs/GettingStarted/4. UsingLayout.mdx",
+    "../docs/GettingStarted/5. UsingPattern.mdx",
     "../docs/APIDocumentation/Hexagon.mdx",
+    "../src/Hexagon/Hexagon.stories.tsx",
     "../docs/APIDocumentation/components/hexagon.stories.tsx",
     "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)",
     "../docs/**/*.stories.@(ts|tsx)"],

@@ -1,5 +1,5 @@
-import { Meta, Canvas } from '@storybook/addon-docs';
-import * as BasicHexagonStory from "../APIDocumentation/components/hexagontwo.stories";
+import { Meta, Canvas, Story } from '@storybook/addon-docs';
+import * as HexagonStory from "../../src/Hexagon/Hexagon.stories";
 
 <Meta title="Getting Started/Your First App"/>
 
@@ -27,21 +27,24 @@ npm install @aaronzshey/react-hexgrid
 In `App.tsx`, delete all the random code and replace it with this:
 
 ```tsx
-import { HexGrid, Hexagon } from '@aaronzshey/react-hexgrid';
+import { HexGrid, Layout, Hexagon } from '@aaronzshey/react-hexgrid';
 export default function App() {
-  <HexGrid style={{width: "100vw", height: "100vh"}}>
-    <Hexagon q={0} r={0} s={0} cellStyle={{fill: "red"}}/>
-    </HexGrid>
+  <HexGrid width="100%" height="100%">
+    <Layout>
+      <Hexagon q={0} r={0} s={0} cellStyle={{fill: "red"}}/>
+    </Layout>
+  </HexGrid>
 }
 ```
 
 Run the app with `npm run dev` or your preferred package manager, and you should see a red hexagon in the middle of your screen.
 
-<Canvas>
-  <Story of={BasicHexagonStory.Primary} />
-</Canvas>
+  <Story of={HexagonStory.Default} />
+
 
 ### Step 4: Understanding how it works
 
-The HexGrid component exports a simple SVG element with a couple of default props, such as viewbox.  The Hexagon component
-can accept all sorts of props, but the required ones are q, r, and s - the coordinates.
+The HexGrid component exports a simple SVG element with a couple of default props, such as viewbox.  You can substitute your own svg tag with your own props if you'd like more control.  
+Under the HexGrid tag, the Layout tag exports an svg group tag, along with providing useful information such as the rotation of the Hexagons.  Finally, we have our Hexagon tag! 
+
+To learn more about the underlying API and structure of this library, check out the API section.
