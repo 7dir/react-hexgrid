@@ -5,6 +5,8 @@ module.exports = {
     "../docs/GettingStarted/3. UsingGenerators.mdx",
     "../docs/GettingStarted/4. UsingLayout.mdx",
     "../docs/GettingStarted/5. UsingPattern.mdx",
+    "../docs/GettingStarted/6. UsingPath.mdx",
+    "../docs/GettingStarted/7. UsingEvents.mdx",
     "../docs/APIDocumentation/Hexagon.mdx",
     "../src/Hexagon/Hexagon.stories.tsx",
     "../docs/APIDocumentation/components/hexagon.stories.tsx",

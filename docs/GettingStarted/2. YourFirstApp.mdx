@@ -5,11 +5,8 @@ import * as HexagonStory from "../../src/Hexagon/Hexagon.stories";
 
 # Your First App
 
-Note: Make sure you've installed `react-hexgrid` first!  Check out Introduction if you haven't.
-
 ## Step 1: Create a new React app
-
-Since `react-hexgrid` is just a component library, it doesn't care what you use to init your React app.  I'm partial to vite:
+Since `react-hexgrid` is just a component library, it doesn't care what you use to init your React app.  I'm partial to Vite:
 ```bash
 npx create vite@latest my-hexgrid-app -- --template react-swc-ts
 ```
@@ -44,7 +41,11 @@ Run the app with `npm run dev` or your preferred package manager, and you should
 
 ### Step 4: Understanding how it works
 
-The HexGrid component exports a simple SVG element with a couple of default props, such as viewbox.  You can substitute your own svg tag with your own props if you'd like more control.  
-Under the HexGrid tag, the Layout tag exports an svg group tag, along with providing useful information such as the rotation of the Hexagons.  Finally, we have our Hexagon tag! 
+The HexGrid component exports a simple SVG element with a couple of default props, such as viewbox.  
+You can substitute your own svg tag with your own props if you'd like more control.  
+Under the HexGrid tag, the Layout tag exports an svg group tag, along with providing useful information such as the rotation of the Hexagons.  
+Finally, we have our Hexagon tag!  The cellStyle prop lets you write inline CSS, wrapped in our
+familiar `{{}}` syntax.
+
 
 To learn more about the underlying API and structure of this library, check out the API section.

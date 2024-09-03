@@ -4,8 +4,8 @@ import { useLayoutContext } from "./Layout"
 import { Hex } from "./models/Hex"
 
 export type PathProps = {
-  start: any
-  end?: any
+  start: Hex
+  end?: Hex
 } & Omit<React.SVGProps<SVGPathElement>, "start" | "end">
 
 /**

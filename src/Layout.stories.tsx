@@ -6,6 +6,7 @@ import { HexGrid, Layout, GridGenerator } from "./"
 
 const meta = {
     title: "Stories/Layout",
+    component: Layout
 } as Meta<typeof Layout>
 
 export default meta;
