@@ -7,12 +7,9 @@ module.exports = {
     "../docs/GettingStarted/5. UsingPattern.mdx",
     "../docs/GettingStarted/6. UsingPath.mdx",
     "../docs/GettingStarted/7. UsingEvents.mdx",
-    "../docs/APIDocumentation/Hexagon.mdx",
-    "../src/Hexagon/Hexagon.stories.tsx",
-    "../docs/APIDocumentation/components/hexagon.stories.tsx",
-    "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)",
-    "../docs/**/*.stories.@(ts|tsx)"],
-
+    "../docs/AdvancedExamples/1. DraggingAndDropping.mdx",
+    "../src/**/*.stories.tsx",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

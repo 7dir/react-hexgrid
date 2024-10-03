@@ -71,8 +71,8 @@ for attributes, which we're going to use now:
   r={0} 
   s={0} 
   cellStyle={{fill: "red"}}
-  onMouseEnter={(e: React.MouseEvent<SVGElement, MouseEvent>) => ((e.target as SVGElement).setAttribute("style", "fill: blue;"))}
-  onMouseLeave={(e: React.MouseEvent<SVGElement, MouseEvent>) => ((e.target as SVGElement).setAttribute("style", "fill: red;"))}
+  onMouseEnter={(e: React.MouseEvent<SVGElement, MouseEvent>) => ( (e.target as SVGElement).style.fill = "blue" )}
+  onMouseLeave={(e: React.MouseEvent<SVGElement, MouseEvent>) => ( (e.target as SVGElement).style.fill = "red" )}
   />
 ```
 
@@ -92,10 +92,10 @@ export default function App() {
             transition: "fill 0.1s" 
         }} 
         onMouseEnter={(e: React.MouseEvent<SVGElement, MouseEvent>) => 
-            (e.target as SVGElement).setAttribute("style", "fill: blue;")
+            (e.target as SVGElement).style.fill = "blue"
         }s
         onMouseLeave={(e: React.MouseEvent<SVGElement, MouseEvent>) => 
-            (e.target as SVGElement).setAttribute("style", "fill: red;")
+            (e.target as SVGElement).style.fill = "red"
         }
       />
     </Layout>

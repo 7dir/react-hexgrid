@@ -1,6 +1,6 @@
 import * as React from "react"
 import { StoryFn, Meta } from "@storybook/react"
-import { HexGrid, Layout, Hexagon, GridGenerator, HexUtils } from "../.."
+import { HexGrid, Layout, Hexagon, GridGenerator, HexUtils } from "../../../src"
 import { useInterval } from "react-use"
 import { COLORS } from "../colors"
 
@@ -24,7 +24,7 @@ function reset(): CellDict {
   const hexas: Cell[] = initialHexagons.map(({ q, r, s }) => ({
     ...{ q, r, s },
     state: (Math.random() < 0.4 &&
-    HexUtils.distance({ q, r, s }, { q: 0, r: 0, s: 0 }) <= 3
+      HexUtils.distance({ q, r, s }, { q: 0, r: 0, s: 0 }) <= 3
       ? "Living"
       : "Dead") as State,
   }))
@@ -135,11 +135,11 @@ const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
                   fill:
                     hex.state === "Dead"
                       ? COLORS.gray[
-                          HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
-                        ]
+                      HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 4
+                      ]
                       : colors[step % colors.length][
-                          5 + (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
-                        ],
+                      5 + (HexUtils.distance(hex, { q: 0, r: 0, s: 0 }) % 3)
+                      ],
                   transition:
                     hex.state === "Dead"
                       ? timingFunctionDying
