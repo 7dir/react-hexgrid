@@ -23,7 +23,7 @@ coverage/
 build/Release
 
 # Babel compiled sources
-lib/
+# lib/
 
 # UMD distribution
 dist/
