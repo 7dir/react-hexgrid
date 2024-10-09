@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Pattern>
 export const Default: Story = {
     render: () => (
         <>
-            <HexGrid width="100%" height="100%">
+            <HexGrid width="100%">
                 <Layout>
                     <Pattern id="my-pattern" link="https://picsum.photos/200" />
                     <Hexagon q={0} r={0} s={0} fill="my-pattern" />

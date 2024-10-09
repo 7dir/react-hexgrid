@@ -26,7 +26,7 @@ const args: PathProps = {
 export const Default: Story = {
     render: () => (
         <>
-            <HexGrid width="100%" height="100%">
+            <HexGrid width="100%">
                 <Layout flat={false} spacing={1.1}>
                     {GridGenerator.hexagon(10).map((hex, i) => (
                         <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} cellStyle={{ fill: "red" }} />
@@ -44,7 +44,7 @@ export const Default: Story = {
 export const FillTrue: Story = {
     render: () => (
         <>
-            <HexGrid width="100%" height="100%">
+            <HexGrid width="100%">
                 <Layout flat={false} spacing={1.1}>
                     {GridGenerator.hexagon(10).map((hex, i) => (
                         <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} cellStyle={{ fill: "red" }} />

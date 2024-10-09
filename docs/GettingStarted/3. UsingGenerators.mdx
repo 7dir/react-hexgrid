@@ -19,12 +19,10 @@ Here's a basic example, using the hexagon-shaped generator:
 import { Hexagon, HexGrid, HexagonGenerator } from '@aaronzshey/react-hexgrid';
 export default function App() {
     return(
-        <HexGrid>
-            <Layout>
+        <HexGrid width="100%">
                 {GridGenerator.hexagon(2).map((hex, i) => (
-                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} cellStyle={{ fill: "red", stroke: "black", strokeWidth: "0.1" }} />
+                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} style={{ fill: "red", stroke: "black", strokeWidth: "0.1" }} />
                 ))}
-            </Layout>
         </HexGrid>
     )
 }
