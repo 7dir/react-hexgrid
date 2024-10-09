@@ -3,7 +3,6 @@
     "composite": true,
     "declaration": true,
     "declarationDir": "lib",
-    //"emitDeclarationOnly": false,
     "rootDir": "src",
     "declarationMap": true,
     "esModuleInterop": true,
@@ -17,7 +16,6 @@
     "sourceMap": true,
     "strict": true,
     "noImplicitAny": true,
-    //"allowJs": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "jsx": "react",
@@ -29,7 +27,6 @@
     "module": "ESNext",
     "target": "ES6",
     "outDir": "./lib",
-    //"types": ["node", "jest"]
   },
   "include": [
     "src"
@@ -38,5 +35,6 @@
     "src/stories",
     "src/**/*.stories.tsx",
     "src/**/*.stories.ts",
+    "src/PathFinding.disabledstories.tsx"
   ]
 }
