@@ -1,5 +1,5 @@
 import React from "react"
-import { ComponentStory, ComponentMeta } from "@storybook/react"
+import { StoryFn, Meta } from "@storybook/react"
 import { HexGrid, Hexagon } from "../.."
 import { GameLayout } from "./GameLayout"
 import { TilesLayout } from "./TilesLayout"
@@ -7,9 +7,9 @@ import { TilesLayout } from "./TilesLayout"
 export default {
   title: "Example/DragAndDrop",
   component: Hexagon,
-} as ComponentMeta<typeof Hexagon>
+} as Meta<typeof Hexagon>
 
-const Template: ComponentStory<typeof Hexagon> = (args, { argTypes }) => {
+const Template: StoryFn<typeof Hexagon> = (args, { argTypes }) => {
   return (
     <div className="app">
       <h2>Drag & drop</h2>

@@ -1,3 +1,4 @@
+import "./global.css"
 export const parameters = {
   //actions: { argTypesRegex: "^on[A-Z].*" },
   actions: {
@@ -7,11 +8,6 @@ export const parameters = {
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
-    },
-  },
-  parameters: {
-    docs: {
-      toc: true,
     },
   },
 };

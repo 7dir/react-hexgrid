@@ -1,5 +1,5 @@
-svg .game {
-}
+svg .tiles {}
+
 /*
 Russian blue pattern:
 #7be3f6
@@ -8,30 +8,34 @@ Russian blue pattern:
 #133b43
 #03090a
 */
-/* svg .game g {
+svg .tiles g {
   fill: #4499a9;
   fill-opacity: 0.6;
 }
-svg .game g:hover {
+
+svg .tiles g:hover {
   fill: #7be3f6;
   fill-opacity: 0.7;
 }
-svg .game g:hover text {
+
+svg .tiles g:hover text {
   fill-opacity: 1;
 }
 
-svg .game g polygon {
+svg .tiles g polygon {
   stroke: #7be3f6;
   stroke-width: 0.2;
   transition: fill-opacity .5s;
 }
-svg .game g text {
+
+svg .tiles g text {
   font-size: 0.22em;
   fill: white;
   fill-opacity: 0.7;
   transition: fill-opacity .5s;
 }
-svg .game path {
+
+svg .tiles path {
   fill: none;
   stroke: #7be3f6;
   stroke-width: 0.2em;
@@ -39,10 +43,3 @@ svg .game path {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-svg .game g.blocked {
-    fill: #465880;
-}
-svg .game g.blocked:hover {
-    fill: #53699a;
-} */
