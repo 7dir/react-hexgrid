@@ -15,7 +15,7 @@ To use the "pointy" orientation, set the `flat` prop to false:
 import { HexGrid, Hexagon } from '@aaronzshey/react-hexgrid';
 export default function App() {
   <HexGrid width="100%" height="100%">
-    <Layout flat="false">
+    <Layout flat={false}>
       <Hexagon q={0} r={0} s={0} cellStyle={{fill: "red"}}/>
     </Layout>
   </HexGrid>

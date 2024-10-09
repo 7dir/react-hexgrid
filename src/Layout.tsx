@@ -15,7 +15,7 @@ export type LayoutContextProps = {
   points: string
 }
 
-const LAYOUT_FLAT = new Orientation(
+export const LAYOUT_FLAT = new Orientation(
   3.0 / 2.0,
   0.0,
   Math.sqrt(3.0) / 2.0,
@@ -64,7 +64,7 @@ export function useLayoutContext() {
  * @returns Array of 6 points
  */
 
-function calculateCoordinates(
+export function calculateCoordinates(
   circumradius: number,
   angle: number = 0,
   center: Point = new Point(0, 0),
