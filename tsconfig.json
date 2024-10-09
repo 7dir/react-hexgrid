@@ -3,7 +3,8 @@
     "composite": true,
     "declaration": true,
     "declarationDir": "lib",
-    "emitDeclarationOnly": false,
+    //"emitDeclarationOnly": false,
+    "rootDir": "src",
     "declarationMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -15,11 +16,11 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "noImplicitAny": false,
-    "allowJs": true,
+    "noImplicitAny": true,
+    //"allowJs": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -28,14 +29,14 @@
     "module": "ESNext",
     "target": "ES6",
     "outDir": "./lib",
-    "types": [
-      "node",
-      "jest"
-    ]
+    //"types": ["node", "jest"]
   },
   "include": [
-    "src",
-    "docs",
-    "examples/stories",
+    "src"
+  ],
+  "exclude": [
+    "src/stories",
+    "src/**/*.stories.tsx",
+    "src/**/*.stories.ts",
   ]
 }
