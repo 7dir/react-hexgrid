@@ -167,7 +167,7 @@ export function Hexagon(
   const draggable = { draggable: true } as any
   return (
     <g
-      className="hexagon-group"
+      className={className}
       transform={`translate(${pixel.x}, ${pixel.y})`}
       {...rest}
       {...draggable}
