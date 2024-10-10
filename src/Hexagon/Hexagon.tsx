@@ -106,6 +106,7 @@ export function Hexagon(
     cellStyle,
     style,
     className,
+    radius,
     children,
     onDragStart,
     onDragEnd,
@@ -143,9 +144,12 @@ export function Hexagon(
     spacing: defaultSpacing,
   })
 
+
   // Here we look for a layout context (layout parent).  If it isn't there, we use the default.
   const layout = useLayoutContext().layout || flatDefaultLayout
-  const points = useLayoutContext().points || calculateCoordinates(layout.size.x).map((point) => `${point.x},${point.y}`).join(" ");
+  // if radius is set, we use that, otherwise we know layout is guaranteed so we can safely use that
+  const smartRadius = radius || layout.size.x;
+  const points = useLayoutContext().points || calculateCoordinates(smartRadius).map((point) => `${point.x},${point.y}`).join(" ");
 
 
   const { hex, pixel } = React.useMemo(() => {
