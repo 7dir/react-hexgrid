@@ -10,9 +10,8 @@ const config: StorybookConfig = {
     "../docs/GettingStarted/6. UsingPath.mdx",
     "../docs/GettingStarted/7. UsingEvents.mdx",
     "../docs/AdvancedExamples/1. DraggingAndDropping.mdx",
-    "../docs/test.mdx",
     "../src/**/*.stories.tsx",
-    "../docs/src/Hero.stories.tsx",
+    "../docs/Hero/Hero.stories.tsx",
   ],
   addons: [
     "@storybook/addon-links",
