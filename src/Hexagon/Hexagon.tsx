@@ -44,7 +44,7 @@ export type HexagonProps = {
    */
   fill?: string
   /**
-   * Optional classname.  Usage unclear, currently not used.
+   * Optional classname. 
    */
   className?: string
   /**
@@ -168,7 +168,9 @@ export function Hexagon(
   // we just use css with the g or polygon selectors to set fill.
   // I'm actually not sure what this prop and variable are supposed to do
   const fillId = fill ? `url(#${fill})` : undefined
+  //const draggable = (onDragStart || onDragEnd || onDragOver) ? { draggable: true } : { draggable: false }
   const draggable = { draggable: true } as any
+  console.log(draggable)
   return (
     <g
       className={className}

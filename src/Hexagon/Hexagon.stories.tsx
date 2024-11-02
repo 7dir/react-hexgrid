@@ -1,8 +1,11 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within, expect } from "@storybook/test";
 
 import Hexagon from "./Hexagon";
-import { HexGrid, Layout } from "../"
+import { HexGrid } from "../"
+
+import "../../.storybook/global.css";
 
 const meta = {
     title: "Stories/Hexagon",
@@ -17,7 +20,7 @@ export const Default: Story = {
     render: () => (
         <>
             <HexGrid width="100%">
-                <Hexagon q={0} r={0} s={0} style={{ fill: "red" }} />
+                <Hexagon q={0} r={0} s={0} className="tutorial" />
             </HexGrid>
         </>
     )
@@ -27,7 +30,7 @@ export const Event: Story = {
     render: () => (
         <>
             <HexGrid width="100%">
-                <Hexagon q={0} r={0} s={0} cellStyle={{ fill: "red", transition: "fill 0.1s" }}
+                <Hexagon data-testid="hexOne" q={0} r={0} s={0} cellStyle={{ fill: "red", transition: "fill 0.1s" }}
                     onMouseEnter={(e: React.MouseEvent<SVGElement, MouseEvent>) =>
                         (e.target as SVGElement).style.fill = "blue"
                     }
@@ -37,7 +40,17 @@ export const Event: Story = {
                 />
             </HexGrid>
         </>
-    )
+    ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+        const hex = await canvas.getByTestId("hexOne");
+        await userEvent.hover(hex);
+        expect(hex).toHaveStyle({ fill: "rgb(0,0,255)" });
+    },
+}
+
+export const Hook: Story = {
+
 }
 
 export const DragAndDrop: Story = {

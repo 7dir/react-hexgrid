@@ -21,12 +21,14 @@ export default function App() {
     return(
         <HexGrid width="100%">
                 {GridGenerator.hexagon(2).map((hex, i) => (
-                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} style={{ fill: "red", stroke: "black", strokeWidth: "0.1" }} />
+                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                 ))}
         </HexGrid>
     )
 }
 ```
+
+(using the same `App.css` file from earlier)
 
 And that's it!  You should see something like this:
 

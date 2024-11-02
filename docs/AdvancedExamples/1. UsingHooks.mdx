@@ -1,0 +1,39 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import * as HexagonStory from "../../src/Hexagon/Hexagon.stories.tsx";
+
+<Meta title="Advanced Tutorials/Using Hooks" />
+
+# Hooks
+Ah, hooks.  The quintessential React feature that every React developer worth their salt knows how to use -
+or at the very least, google howo to use.  
+
+Hooks are useful in react-hexgrid because they give us a way to manipulate a hexagon after it's been rendered.
+
+An array of Hexes:
+
+```js
+const hexes: Hex[] = [new Hex(0,0,0), new Hex(0,1,0)];
+```
+
+is useless to us once it's been rendered.  It'll turn into some HTML like:
+
+```HTML
+<svg>
+<g class="tutorial" transform="translate(randomnumbers)" draggable="true">
+    <g class="hexagon">
+        <polygon points="randomnumbers"></polygon>
+    </g>
+</g>
+<g class="tutorial" transform="translate(randomnumbers)" draggable="true">
+    <g class="hexagon">
+        <polygon points="randomnumbers"></polygon>
+    </g>
+</g>
+<g class="tutorial" transform="translate(randomnumbers)" draggable="true">
+    <g class="hexagon">
+        <polygon points="randomnumbers"></polygon>
+    </g>
+</g>
+```
+
+Which is patently useless
