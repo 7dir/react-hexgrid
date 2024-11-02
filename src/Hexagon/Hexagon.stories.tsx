@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within, expect } from "@storybook/test";
 
 import Hexagon from "./Hexagon";
-import { HexGrid } from "../"
+import { HexGrid, GridGenerator, Hex, Layout, HexUtils } from "../"
 
 import "../../.storybook/global.css";
 
@@ -49,8 +49,53 @@ export const Event: Story = {
     },
 }
 
-export const Hook: Story = {
+const HooksDemoComponent = () => {
+    const allHexagons: Hex[] = GridGenerator.hexagon(4);
+    const [hexagons, setHexagons] = useState<Hex[]>(allHexagons);
+    return (
+        <HexGrid width="95vw" height="95vh">
+            <Layout
+                size={{ x: 6, y: 6 }}
+                flat={false}
+                spacing={1.1}
+                origin={{ x: 0, y: 0 }}
+            >
+                {hexagons.map((hex: Hex, i: number) => (
+                    <Hexagon
+                        key={i}
+                        q={hex.q}
+                        r={hex.r}
+                        s={hex.s}
+                        className={hex.props ? hex.props.className : "tutorial"}
+                        onMouseOver={(_event, source) => {
+                            // Set the path's end on hover
 
+                            const targetHex = source.state.hex
+                            // Color some hexagons
+                            const coloredHexas = hexagons.map((hex) => {
+                                hex.props = hex.props || {}
+                                // Highlight tiles that are next to the target (1 distance away)
+                                hex.props.className =
+                                    HexUtils.distance(targetHex, hex) < 2 ? "tutorial active" : "tutorial"
+
+                                // If the tile is on same coordinate, add class specific to the coordinate name
+                                hex.props.className += targetHex.q === hex.q ? " q " : ""
+                                hex.props.className += targetHex.r === hex.r ? " r " : ""
+                                hex.props.className += targetHex.s === hex.s ? " s " : ""
+
+                                return hex
+                            })
+                            setHexagons(coloredHexas)
+                        }}
+                    />
+                ))}
+            </Layout>
+        </HexGrid >
+    )
+}
+
+export const Hooks: Story = {
+    render: () => <HooksDemoComponent />,
 }
 
 export const DragAndDrop: Story = {

@@ -8,7 +8,7 @@ const config: StorybookConfig = {
     "../docs/GettingStarted/4. UsingLayout.mdx",
     "../docs/GettingStarted/5. UsingPattern.mdx",
     "../docs/GettingStarted/6. UsingPath.mdx",
-    //"../docs/GettingStarted/7. UsingEvents.mdx",
+    "../docs/GettingStarted/7. UsingEvents.mdx",
     //"../docs/AdvancedExamples/1. DraggingAndDropping.mdx",
     "../docs/AdvancedExamples/1. UsingHooks.mdx",
     "../src/**/*.stories.tsx",

@@ -5,6 +5,16 @@ import * as HexagonStory from "../../src/Hexagon/Hexagon.stories.tsx";
 
 # Events
 
+### Before we start, a quick disclaimer:
+
+Don't use events to do simple things such as changing styles - use CSS instead.  Using `:hover` CSS 
+rules are faster and easier to read.  Only use mouse events when you need access to Javascript utils.
+
+Since this is just a simple example, we are going to change the styles of a hexagon, just to understand 
+how events work.  But don't do that!  Do as I say, not as I do :).
+
+Anyway, let's jump in!
+
 Each `Hexagon` component exposes the full suite of React events you are used to: onMouseEnter, 
 onMouseLeave, onClick, etc.  However, using these events is a little tricky! 
 
