@@ -4,6 +4,8 @@ import Hexagon from "./Hexagon/Hexagon";
 
 import { HexGrid, Layout, GridGenerator } from "./"
 
+import "../.storybook/global.css";
+
 const meta = {
     title: "Stories/Layout",
     component: Layout
@@ -19,7 +21,7 @@ export const Pointy: Story = {
             <HexGrid width="100%">
                 <Layout flat={false}>
                     {GridGenerator.hexagon(2).map((hex, i) => (
-                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} style={{ fill: "red", stroke: "black", strokeWidth: "0.1" }} />
+                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                     ))}
                 </Layout>
             </HexGrid>
@@ -33,7 +35,7 @@ export const Spacing: Story = {
             <HexGrid width="100%">
                 <Layout spacing={1.1}>
                     {GridGenerator.hexagon(2).map((hex, i) => (
-                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} style={{ fill: "red", stroke: "black", strokeWidth: "0.1" }} />
+                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                     ))}
                 </Layout>
             </HexGrid >

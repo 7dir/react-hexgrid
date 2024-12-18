@@ -44,7 +44,7 @@ export type HexagonProps = {
    */
   fill?: string
   /**
-   * Optional classname.  Usage unclear, currently not used.
+   * Optional classname. 
    */
   className?: string
   /**
@@ -106,6 +106,7 @@ export function Hexagon(
     cellStyle,
     style,
     className,
+    radius,
     children,
     onDragStart,
     onDragEnd,
@@ -143,9 +144,12 @@ export function Hexagon(
     spacing: defaultSpacing,
   })
 
+
   // Here we look for a layout context (layout parent).  If it isn't there, we use the default.
   const layout = useLayoutContext().layout || flatDefaultLayout
-  const points = useLayoutContext().points || calculateCoordinates(layout.size.x).map((point) => `${point.x},${point.y}`).join(" ");
+  // if radius is set, we use that, otherwise we know layout is guaranteed so we can safely use that
+  const smartRadius = radius || layout.size.x;
+  const points = useLayoutContext().points || calculateCoordinates(smartRadius).map((point) => `${point.x},${point.y}`).join(" ");
 
 
   const { hex, pixel } = React.useMemo(() => {
@@ -164,10 +168,12 @@ export function Hexagon(
   // we just use css with the g or polygon selectors to set fill.
   // I'm actually not sure what this prop and variable are supposed to do
   const fillId = fill ? `url(#${fill})` : undefined
+  //const draggable = (onDragStart || onDragEnd || onDragOver) ? { draggable: true } : { draggable: false }
   const draggable = { draggable: true } as any
+  console.log(draggable)
   return (
     <g
-      className="hexagon-group"
+      className={className}
       transform={`translate(${pixel.x}, ${pixel.y})`}
       {...rest}
       {...draggable}

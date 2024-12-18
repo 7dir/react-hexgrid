@@ -23,7 +23,7 @@ coverage/
 build/Release
 
 # Babel compiled sources
-lib/
+# lib/
 
 # UMD distribution
 dist/
@@ -41,4 +41,3 @@ nbproject
 storybook-static
 
 node_modules
-node_modules/
