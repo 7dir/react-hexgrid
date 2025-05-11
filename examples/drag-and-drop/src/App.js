@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HexGrid } from 'react-hexgrid';
+import { HexGrid } from '@7dir/react-hexgrid';
 import GameLayout from './GameLayout';
 import TilesLayout from './TilesLayout';
 import './App.css';

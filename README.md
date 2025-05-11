@@ -1,32 +1,10 @@
 # react-hexgrid
 
-![Downloads](https://img.shields.io/npm/dt/react-hexgrid.svg)
-![npm version](https://img.shields.io/npm/v/react-hexgrid.svg)
-![Dependencies Status](https://img.shields.io/librariesio/github/hellenic/react-hexgrid)
 [![Live demo](https://img.shields.io/badge/live-demo-brightgreen.svg)](https://hellenic.github.io/react-hexgrid/examples/)
 ![License](https://img.shields.io/npm/l/react-hexgrid.svg)
-[![CodeFactor](https://www.codefactor.io/repository/github/7dir/react-hexgrid/badge)](https://www.codefactor.io/repository/github/7dir/react-hexgrid)
-[![Jest Status](https://img.shields.io/github/actions/workflow/status/7dir/react-hexgrid/node.js.yml?style=flat&logo=jest&label=%20&labelColor=%2398435c)](https://github.com/7dir/react-hexgrid/actions/workflows/node.js.yml)[![Chromatic UI Tests Status](https://img.shields.io/github/actions/workflow/status/7dir/react-hexgrid/chromatic.yml?style=flat&logo=chromatic&label=%20&labelColor=white)](https://github.com/7dir/react-hexgrid/actions/workflows/chromatic.yml)
 
 [![Storybook Permalink](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg)](https://main--66a5393443e58f4dc4f0ca6b.chromatic.com/?path=/story/pathfinding--default)
 
-React components to build interactive hexagon grids. This library uses SVG and allows you to create fully customizable and scalable interactive hexagon grids with a simple api.
-
-The component based approach allows you to customize the grid shape to suit your needs or even apply your own components or SVG elements to it. You can use the pre-defined generator to create certain grid shapes or you may build your own grid as you wish, while still keeping it under control and interactive.
-
-You could easily use this library to build a nice portfolio, image library or even a game (just to name a few)! [![youtube video about hexagons](Hexagons are the bestagons)](https://www.youtube.com/watch?v=thOifuHs6eY), enjoy!
-
-> With inspiration from
-> [http://www.redblobgames.com/grids/hexagons](http://www.redblobgames.com/grids/hexagons).
-
-> 🖊️ Codepen to play around with: https://codepen.io/hellenic/project/editor/AYMbMM#
-
-> Discord server: https://discord.gg/TxNb6EZZZE
-
-## Upcoming Version 2
-
-The new version should not contain any breaking changes. There is typescript support, some storybook examples for easy development and testing. The new version uses the newer react context api under the hood.
-Though there should not be any breaking changes, there could be issues. Feel free to checkout the current beta release and give feedback.
 
 Install via:
 
@@ -52,7 +30,7 @@ This hexagonal grid uses a cubic coordinate system with three coordinates q, r a
 ## Example
 
 ```html
-import { HexGrid, Layout, Hexagon, Text, Pattern, Path, Hex } from 'react-hexgrid';
+import { HexGrid, Layout, Hexagon, Text, Pattern, Path, Hex } from '@7dir/react-hexgrid';
 import './App.css';
 
 class App extends Component {

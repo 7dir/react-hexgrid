@@ -1,4 +1,4 @@
-import { Hexagon, HexGrid, GridGenerator, Hex } from 'react-hexgrid';
+import { Hexagon, HexGrid, GridGenerator, Hex } from '@7dir/react-hexgrid';
 import React from "react";
 import { animated, useSprings } from 'react-spring';
 import "./App.css";

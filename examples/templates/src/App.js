@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { HexGrid, Layout, Hexagon, Text, GridGenerator, HexUtils } from 'react-hexgrid';
+import { HexGrid, Layout, Hexagon, Text, GridGenerator, HexUtils } from '@7dir/react-hexgrid';
 import configs from './configurations';
 import './App.css';
 
