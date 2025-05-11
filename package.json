@@ -61,5 +61,8 @@
   "bugs": {
     "url": "https://github.com/Hellenic/react-hexgrid/issues"
   },
-  "homepage": "https://github.com/Hellenic/react-hexgrid#readme"
+  "homepage": "https://github.com/Hellenic/react-hexgrid#readme",
+  "trustedDependencies": [
+    "@swc/core"
+  ]
 }
