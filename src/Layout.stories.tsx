@@ -25,6 +25,13 @@ export const Pointy: Story = {
                     ))}
                 </Layout>
             </HexGrid>
+            <HexGrid width="100%">
+                <Layout flat={false}>
+                    {GridGenerator.triangle(2).map((hex, i) => (
+                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
+                    ))}
+                </Layout>
+            </HexGrid>
         </>
     )
 }
@@ -35,6 +42,13 @@ export const Spacing: Story = {
             <HexGrid width="100%">
                 <Layout spacing={1.1}>
                     {GridGenerator.hexagon(2).map((hex, i) => (
+                        <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
+                    ))}
+                </Layout>
+            </HexGrid >
+            <HexGrid width="100%">
+                <Layout spacing={1.1}>
+                    {GridGenerator.triangle(2).map((hex, i) => (
                         <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                     ))}
                 </Layout>
