@@ -55,7 +55,8 @@
     "@storybook/blocks": "^8.3.6",
     "@storybook/components": "^8.3.6",
     "@storybook/react-vite": "^8.3.6",
-    "react-hexgrid": "github:7dir/react-hexgrid#main"
+    "react-hexgrid": "github:7dir/react-hexgrid#main",
+    "react-spring": "^9.7.5"
   },
   "files": [
     "lib/",

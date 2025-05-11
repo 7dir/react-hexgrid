@@ -20,7 +20,7 @@ import { Hexagon, HexGrid, HexagonGenerator } from 'react-hexgrid';
 export default function App() {
     return(
         <HexGrid width="100%">
-                {GridGenerator.hexagon(2).map((hex, i) => (
+                {GridGenerator.hexagon(12).map((hex, i) => (
                     <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                 ))}
         </HexGrid>

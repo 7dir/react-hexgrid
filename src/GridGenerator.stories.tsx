@@ -18,10 +18,26 @@ export const Default: Story = {
     render: () => (
         <>
             <HexGrid width="100%">
-                {GridGenerator.hexagon(2).map((hex, i) => (
+                {GridGenerator.hexagon(1).map((hex, i) => (
                     <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
                 ))}
             </HexGrid>
+            <HexGrid width="100%">
+                {GridGenerator.triangle(1).map((hex, i) => (
+                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
+                ))}
+            </HexGrid>
+            <HexGrid width="100%">
+                {GridGenerator.hexagon(3).map((hex, i) => (
+                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
+                ))}
+            </HexGrid>
+            <HexGrid width="100%">
+                {GridGenerator.triangle(3).map((hex, i) => (
+                    <Hexagon key={i} q={hex.q} r={hex.r} s={hex.s} className="tutorial" />
+                ))}
+            </HexGrid>
+            
         </>
     )
 }
