@@ -6,6 +6,15 @@
 [![Storybook Permalink](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg)](https://main--66a5393443e58f4dc4f0ca6b.chromatic.com/?path=/story/pathfinding--default)
 
 
+```json
+{
+    "@react-icons/all-files": "^4.1.0",
+    "react-hexgrid": "github:7dir/react-hexgrid#main",
+    "react-icons": "^5.5.0",
+    "react-spring": "^9.7.5"
+}
+```
+
 Install via:
 
 ```
