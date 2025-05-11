@@ -29,7 +29,7 @@ export type HexagonProps = {
      */
     fill?: string;
     /**
-     * Optional classname.  Usage unclear, currently not used.
+     * Optional classname.
      */
     className?: string;
     /**
