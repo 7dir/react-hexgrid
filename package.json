@@ -1,7 +1,7 @@
 {
-  "name": "react-hexgrid",
+  "name": "@7dir/react-hexgrid",
   "description": "Interactive hexagon grids with React bindings",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:aaronzshey/react-hexgrid.git"
+    "url": "git+ssh://git@github.com:7dir/react-hexgrid.git"
   },
   "license": "MIT",
   "scripts": {

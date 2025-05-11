@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hexgrid": "github:aaronzshey/react-hexgrid#dev",
+    "react-hexgrid": "github:7dir/react-hexgrid#dev",
     "react-spring": "^9.7.4"
   },
   "devDependencies": {
