@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GridGenerator, Layout, Hexagon, Text, Pattern, HexUtils } from '@7dir/react-hexgrid';
+import { GridGenerator, Layout, Hexagon, Text, Pattern, HexUtils } from 'react-hexgrid';
 import './TilesLayout.css';
 
 class TilesLayout extends Component {

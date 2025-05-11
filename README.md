@@ -30,7 +30,7 @@ This hexagonal grid uses a cubic coordinate system with three coordinates q, r a
 ## Example
 
 ```html
-import { HexGrid, Layout, Hexagon, Text, Pattern, Path, Hex } from '@7dir/react-hexgrid';
+import { HexGrid, Layout, Hexagon, Text, Pattern, Path, Hex } from 'react-hexgrid';
 import './App.css';
 
 class App extends Component {

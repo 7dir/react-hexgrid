@@ -1,5 +1,5 @@
 {
-  "name": "@7dir/react-hexgrid",
+  "name": "react-hexgrid",
   "description": "Interactive hexagon grids with React bindings",
   "version": "2.1.1",
   "main": "lib/index.js",
@@ -19,6 +19,8 @@
     "test": "jest --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "b": "bun run build-storybook",
+    "s": "bun run storybook",
     "format": "prettier --write src/**/*.* package.json",
     "chromatic": "npx chromatic"
   },
@@ -50,6 +52,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@7dir/react-hexgrid": "github:7dir/react-hexgrid#main",
     "@storybook/blocks": "^8.3.6",
     "@storybook/components": "^8.3.6",
     "@storybook/react-vite": "^8.3.6"
@@ -63,6 +66,7 @@
   },
   "homepage": "https://github.com/Hellenic/react-hexgrid#readme",
   "trustedDependencies": [
-    "@swc/core"
+    "@swc/core",
+    "esbuild"
   ]
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GridGenerator, HexGrid, Layout, Path, Hexagon, Text, Pattern, Hex } from '@7dir/react-hexgrid';
+import { GridGenerator, HexGrid, Layout, Path, Hexagon, Text, Pattern, Hex } from 'react-hexgrid';
 import './App.css';
 
 class App extends Component {
