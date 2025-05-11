@@ -33,7 +33,7 @@ export function Pattern({ id, link, rc, size = defaultSize }: PatternProps) {
           width={size.x * 2}
           height={size.y * 2}
         />)}
-        {rc && (<>rc</>)}
+        {rc && (<>{rc}</>)}
       </pattern>
     </defs>
   )
