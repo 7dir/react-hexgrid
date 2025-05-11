@@ -4,6 +4,9 @@ import { Size } from "./Layout"
 
 export type PatternProps = {
   id: string
+  x?: number
+  y?: number
+  
   link?: string
   rc?: React.ReactElement
   // ReactElement<any, any>
@@ -15,14 +18,14 @@ const defaultSize = new Point(10, 10)
  * Defines a `<defs><pattern><image>` group (will not be rendered) in order to allow defining images.
  * The given id can be used on the `Hexagon` to render the image
  */
-export function Pattern({ id, link, rc, size = defaultSize }: PatternProps) {
+export function Pattern({ id, x = 0, y = 0, link, rc, size = defaultSize }: PatternProps) {
   return (
     <defs>
       <pattern
         id={id}
         patternUnits="objectBoundingBox"
-        x={0}
-        y={0}
+        x={x}
+        y={y}
         width={size.x}
         height={size.y}
       >
