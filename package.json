@@ -5,11 +5,11 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "author": {
-    "name": "Hellenic"
+    "name": "7dir"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:7dir/react-hexgrid.git"
+    "url": "git+ssh://git@github.com:7dir/react-hexgrid.git#main"
   },
   "license": "MIT",
   "scripts": {
@@ -52,19 +52,19 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "@7dir/react-hexgrid": "github:7dir/react-hexgrid#main",
     "@storybook/blocks": "^8.3.6",
     "@storybook/components": "^8.3.6",
-    "@storybook/react-vite": "^8.3.6"
+    "@storybook/react-vite": "^8.3.6",
+    "react-hexgrid": "github:7dir/react-hexgrid#main"
   },
   "files": [
     "lib/",
     "dist/"
   ],
   "bugs": {
-    "url": "https://github.com/Hellenic/react-hexgrid/issues"
+    "url": "https://github.com/7dir/react-hexgrid/issues"
   },
-  "homepage": "https://github.com/Hellenic/react-hexgrid#readme",
+  "homepage": "https://github.com/7dir/react-hexgrid#readme",
   "trustedDependencies": [
     "@swc/core",
     "esbuild"
